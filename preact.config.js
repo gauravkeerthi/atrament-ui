@@ -17,4 +17,9 @@ export default function (config, env, helpers) {
   if (env.production) {
     config.output.publicPath = '';
   }
+
+  webpack(config, env, helpers, options) {
+    const [ css ] = helpers.getLoadersByName(config, 'css-loader');
+    css.loader.options.modules = false;
+}
 }
