@@ -5,17 +5,17 @@ const UIGame = ({ scene, episode, makeChoice }) => {
   function handleClick (e) {
     const id = e.target.getAttribute('data-id');
     makeChoice(id);
-  }  
+  }
   
   // have a switch statement to handle other UIs
 
-  return (    
-    <div>      
+  return (
+    <div>
       <WhatsappContainer episode={episode} scene={scene} />
        
       <ul>
         { scene.choices.map((c) => <li><button data-id={c.id} onClick={handleClick}>{c.choice}</button></li>) }
-      </ul>  
+      </ul>
     </div>
   );
 };
@@ -32,6 +32,6 @@ export default UIGame;
       </blockquote>
       <ul>
         { scene.choices.map((c) => <li><button data-id={c.id} onClick={handleClick}>{c.choice}</button></li>) }
-      </ul>  
+      </ul>
 
       */

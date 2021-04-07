@@ -12,6 +12,16 @@ import style from './style.scss';
 const profileImage =
   'https://res-3.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco/to9wobgohx1tmried8r5';
 
+/* function identifySpeaker(text,context) {
+ switch (text) {
+    case "Gavin": return <ChatBubbleThem text={text} />
+    case "Nadia": return <ChatBubbleYou text={text} />
+    default : return <ChatBubbleThem text={text} />
+  }
+  
+}
+  */
+
 const WhatsappContainer = ({ episode, scene }) => (
   <div class={style.wa_container}>
     <div class={style.chat_window}>
@@ -29,11 +39,11 @@ const WhatsappContainer = ({ episode, scene }) => (
           </div>
 
           <div class={style.chat_window}>
-            {/* convo start */}
+            
             <div class={style.conversation}>
-             
-              {episode.map((s) => s.text.map((p) => p === '' ? '' : <ChatBubbleYou text={p}/>)) }
-              {scene.text.map((p) => p === '' ? '' : <ChatBubbleThem text={p}/>) }
+              
+              {episode.map((s) => s.text.map((p) => p === '' ? '' : <ChatBubbleThem text={p} />))}
+              {scene.text.map((p) => p === '' ? '' : <ChatBubbleYou text={p} />) }
               
             </div>
           </div>
