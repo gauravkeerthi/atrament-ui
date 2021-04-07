@@ -32,7 +32,7 @@ const WhatsappContainer = ({ episode, scene }) => (
           <div class={style.chat_window}>
             
             <div class={style.conversation}>
-              { /* pass tags to chatbubble */ }
+              { /* pass tags to <Chatbubble text={text} tags={tags} /> */ }
               {episode.map((s) => s.text.map((p) => p === '' ? '' : <ChatBubbleThem text={p} />))}
               {scene.text.map((p) => p === '' ? '' : <ChatBubbleYou text={p} />) }
               
